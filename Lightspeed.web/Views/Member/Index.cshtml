@@ -1,0 +1,79 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<style>
+
+    div1{border: 5px solid  black;margin:10px;}
+
+
+</style>
+
+
+
+<h2>Index</h2>
+
+
+
+
+
+
+
+
+<div id="div1">
+
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Cname</th>
+                <th>Phone</th>
+                <th>Add</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody></tbody>
+
+
+
+    </table>
+
+
+
+
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+
+<script>
+
+    $.ajax({
+        url: "/Member/Getmember",
+        contentType: "application/json",
+        type: 'post',
+        async: false,
+        data:"{}",
+        success: function (datas) {
+            alert(JSON.stringify(
+                datas));
+        },
+        error: function () {alert("error");}
+
+
+    })
+
+
+
+
+
+
+
+</script>
