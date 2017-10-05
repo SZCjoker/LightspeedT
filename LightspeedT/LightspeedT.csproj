@@ -25,6 +25,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <ApplicationInsightsResourceId>/subscriptions/55a6e682-34d7-4f4f-8067-7fb610ec97a8/resourcegroups/Default-ApplicationInsights-EastUS/providers/microsoft.insights/components/LightspeedT</ApplicationInsightsResourceId>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -150,6 +151,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\TestDB.mdf" />
+    <Content Include="App_Data\TestDB_log.ldf">
+      <DependentUpon>TestDB.mdf</DependentUpon>
+    </Content>
     <Content Include="Global.asax" />
     <Content Include="Models\TestDBModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -227,7 +232,6 @@
     <Content Include="__connectionStrings.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Views\base\" />
     <Folder Include="Views\Inside\" />
   </ItemGroup>
