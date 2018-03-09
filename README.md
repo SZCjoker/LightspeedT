@@ -1,5 +1,5 @@
 # LightspeedT
-This project is a way I development web api sln by used Repository way 
+This project is a  test project ,I development web api sln by used Repository way 
 
 
 The are two project in sln now,  and will add more about the other 3 or 5  in recently  I expected
