@@ -6,7 +6,7 @@ using System.Web;
 
 namespace LightspeedT.Models.service
 {
-    public static class Role
+    public static class Role  // can be any role   just  do authority control 
     {
         public static Operator<T> GetOp<T>() where T : class
         {
