@@ -25,13 +25,13 @@
 <div id="div1">
 
 
-    <table>
-        <thead>
+    <table class="=table">
+        <thead class="thead-dark">
             <tr>
-                <th>ID</th>
-                <th>Cname</th>
-                <th>Phone</th>
-                <th>Add</th>
+                <th scope="col">ID</th>
+                <th scope="col">Cname</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Add</th>
 
             </tr>
 
@@ -54,6 +54,9 @@
         crossorigin="anonymous"></script>
 
 <script>
+
+      
+
 
     $.ajax({
         url: "/Member/Getmember",

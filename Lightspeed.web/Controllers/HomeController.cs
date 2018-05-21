@@ -22,8 +22,8 @@ namespace Lightspeed.web.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
-
+            ViewBag.Message = "Contact Me";
+            ViewBag.Mail = "neo_7442_@hotmail.com";
             return View();
         }
     }
