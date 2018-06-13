@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using Lightspeed.web.Models;
 
 namespace Lightspeed.web.Controllers
 {
@@ -25,8 +26,8 @@ namespace Lightspeed.web.Controllers
         {
             string queryurl = url + "getalldata";
             var excute = await SendPostRequest(queryurl, null);
-            var excuresult = await ApiResult<dynamic>(excute);
-            return GetResult<dynamic>(excuresult);
+            var excuresult = await ApiResult<MemberDetail>(excute);
+            return GetResult(excuresult);
         }
 
 
@@ -46,7 +47,7 @@ namespace Lightspeed.web.Controllers
             {
                 result = new ResultDTO<T>("-9999", ex.Message, "執行失敗", data);
             }
-            using (result) return Json(result);
+            using (result) return Json(result,JsonRequestBehavior.AllowGet);
         }
 
 

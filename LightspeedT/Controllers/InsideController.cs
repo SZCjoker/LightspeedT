@@ -49,18 +49,18 @@ namespace LightspeedT.Controllers
         /// <returns></returns>
         [System.Web.Http.HttpPost]
         [System.Web.Http.Route("~/apitest/getalldata")]
-        public IHttpActionResult GetMemberDetails()
+        public IEnumerable<Memdetail> GetMemberDetails()
         {
             var data = Role.GetQ<Member>().Queries(p=>p.DeleteorNot==false);
             var idlist=data.Select(p => p.MemID);
             var result = new List<Memdetail>();
             foreach (var id in idlist)
             {
-                 var datas= Role.GetQ<Memdetail>().DataByKey(p=>p.MemID==id);
+                var datas = Role.GetQ<Memdetail>().DataByKey(p => p.MemID == id);
                 result.Add(datas);
             }
 
-            return  GetResult(result);
+            return  result;
         }
         /// <summary>
         /// 取得會員資料BYID
