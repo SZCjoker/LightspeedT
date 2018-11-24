@@ -47,9 +47,9 @@ namespace LightspeedT.Controllers
         /// 取得所有正常會員資料
         /// </summary>
         /// <returns></returns>
-        [System.Web.Http.HttpPost]
+        [System.Web.Http.HttpGet]
         [System.Web.Http.Route("~/apitest/getalldata")]
-        public IEnumerable<Memdetail> GetMemberDetails()
+        public IHttpActionResult GetMemberDetails()
         {
             var data = Role.GetQ<Member>().Queries(p=>p.DeleteorNot==false);
             var idlist=data.Select(p => p.MemID);
@@ -60,7 +60,7 @@ namespace LightspeedT.Controllers
                 result.Add(datas);
             }
 
-            return  result;
+            return GetResult(result);
         }
         /// <summary>
         /// 取得會員資料BYID
