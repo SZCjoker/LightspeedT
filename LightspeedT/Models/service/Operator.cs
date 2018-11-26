@@ -29,7 +29,7 @@ namespace LightspeedT.Models.service
             IRepository<T> Repository = new GenericRepository<T>();
             var Result = Repository.Get(predicate);
             return Result;
-        }//query data by keys
+        }//query datas by key
         public T[] DatasByKeys(Expression<Func<T, bool>> predicate)
         {
             IRepository<T> Repository = new GenericRepository<T>();
