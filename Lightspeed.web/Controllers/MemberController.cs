@@ -141,7 +141,35 @@ namespace Lightspeed.web.Controllers
         #endregion
     }
 
+    //public class Jwt
+    //{
+    //    private IJsonSerializer serializer = new JsonNetSerializer();
+    //    private IBase64UrlEncoder urlEncoder = new JwtBase64UrlEncoder();
+    //    private string secret = "asdfghjkiuytqwer"; //key
 
+    //    public string EnCodeJwt(Dictionary<string, string> userinfo)
+    //    {
+    //        IJwtAlgorithm algorithm = new HMACSHA256Algorithm();
+    //        IJwtEncoder encoder = new JwtEncoder(algorithm, serializer, urlEncoder);
+    //        var token = encoder.Encode(userinfo, secret);
+    //        return token;
+    //    }
+
+
+    //    public string DeCodeJwt(string token)
+    //    {
+    //        IDateTimeProvider provider = new UtcDateTimeProvider();
+    //        IJwtValidator validator = new JwtValidator(serializer, provider);
+    //        IJwtDecoder decoder = new JwtDecoder(serializer, validator, urlEncoder);
+    //        var Json = decoder.Decode(token, secret, verify: true);
+    //        return Json;
+    //    }
+
+
+
+
+
+    //}
 
 
 

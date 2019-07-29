@@ -12,7 +12,7 @@ namespace LightspeedT.Models.Repository
 {
     public class GenericRepository<T> : IRepository<T> where T : class
     {
-        #region 建構子
+        #region constructor
         public GenericRepository() : this(new TestDBEntities())
         {
 
@@ -31,14 +31,14 @@ namespace LightspeedT.Models.Repository
         }
         #endregion
 
-        #region 解構子
+        #region destructor
         ~GenericRepository()
         {
             Dispose(true);
         }
         #endregion
 
-        #region 釋放資源
+        #region dispose  resource 
         public void Dispose()
         {
             Dispose(true);
@@ -55,11 +55,11 @@ namespace LightspeedT.Models.Repository
         }
         #endregion
 
-        #region 欄位
+        #region property
         private DbContext _context { get; set; }
         #endregion
 
-        #region 方法
+        #region method 
         public void Create(T instance)
         {
             if (instance == null) throw new ArgumentNullException("instance is null");
