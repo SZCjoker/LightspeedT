@@ -3,12 +3,12 @@
     ViewBag.Title = "Index";
 }
 
-
 <style>
 
-    div1{border: 5px solid  black;margin:10px;}
-
-
+    #div1 {
+        border: 5px solid black;
+        margin: 10px;
+    }
 </style>
 
 
@@ -45,8 +45,7 @@
 
 
 
-
-
+    
 </div>
 
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"
@@ -55,20 +54,20 @@
 
 <script>
 
-      
+
 
 
     $.ajax({
-        url: "/Member/Getmember",
+        url: "../Member/GetMember",
         contentType: "application/json",
         type: 'post',
         async: false,
-        data:"{}",
+        data: "{}",
         success: function (datas) {
             alert(JSON.stringify(
-                datas));
+                datas.d));
         },
-        error: function () {alert("error");}
+        error: function (errmsg) { alert(JSON.stringify(errmsg)); }
 
 
     })

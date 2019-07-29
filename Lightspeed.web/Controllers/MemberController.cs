@@ -15,13 +15,18 @@ namespace Lightspeed.web.Controllers
         // GET: Member
         public ActionResult Index()
         {
+            //string queryurl = url + "getalldata";
+            //var excute = await SendPostRequest(queryurl, null);
+            //var excuresult = await ApiResult<MemberDetail>(excute);
+
             return View();
         }
 
 
-       
+
 
         //call api
+        [HttpPost]
         public async Task<ActionResult> GetMember()
         {
             string queryurl = url + "getalldata";

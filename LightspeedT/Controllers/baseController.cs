@@ -116,9 +116,19 @@ namespace LightspeedT.Controllers
         }
 
 
-     
+
 
     }
 
+    public class AllowCORSAttribute : ActionFilterAttribute
+    {
+        public override void OnActionExecuting(ActionExecutingContext filterContext)
+        {
+            filterContext.RequestContext.HttpContext.Response.AddHeader("Access-Control-Allow-Origin", "*");
+            filterContext.RequestContext.HttpContext.Response.AddHeader("Access-Control-Allow-Headers", "Content-Type");
+            filterContext.RequestContext.HttpContext.Response.AddHeader("Access-Control-Allow-Methods", "POST");
 
+            base.OnActionExecuting(filterContext);
+        }
+    }
 }

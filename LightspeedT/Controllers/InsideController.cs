@@ -48,6 +48,7 @@ namespace LightspeedT.Controllers
         /// </summary>
         /// <returns></returns>
         [System.Web.Http.HttpPost]
+        [AllowCORS]
         [System.Web.Http.Route("~/apitest/getalldata")]
         public IEnumerable<Memdetail> GetMemberDetails()
         {
