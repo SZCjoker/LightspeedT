@@ -72,12 +72,12 @@ namespace LightspeedT.Models.Repository
         }
         public IQueryable<T> Query(Expression<Func<T, bool>> predicate)
         {
-            return _context.Set<T>().Where(predicate);
+            return _context.Set<T>().Where(predicate).AsNoTracking();
         }
 
         public IQueryable<T> GetAll()
         {
-            return _context.Set<T>().AsQueryable();
+            return _context.Set<T>().AsQueryable().AsNoTracking();
         }
 
         public void Update(T instance)
