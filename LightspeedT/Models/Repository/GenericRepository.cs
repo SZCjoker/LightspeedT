@@ -68,6 +68,7 @@ namespace LightspeedT.Models.Repository
         }
         public T Get(Expression<Func<T, bool>> predicate)
         {
+            if (predicate == null)  throw new DbEntityValidationException("need value");
             return _context.Set<T>().FirstOrDefault(predicate);
         }
         public IQueryable<T> Query(Expression<Func<T, bool>> predicate)
@@ -152,7 +153,7 @@ namespace LightspeedT.Models.Repository
             catch (Exception ex)
             {
 
-                throw;
+                throw new AggregateException("");
             }
 
         }
